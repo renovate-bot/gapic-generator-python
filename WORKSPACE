@@ -72,9 +72,9 @@ http_archive(
 )
 # instantiated in grpc_deps().
 
-_protobuf_version = "30.2"
+_protobuf_version = "34.0"
 
-_protobuf_sha256 = "07a43d88fe5a38e434c7f94129cad56a4c43a51f99336074d0799c2f7d4e44c5"
+_protobuf_sha256 = "e540aae70d3b4f758846588768c9e39090fab880bc3233a1f42a8ab8d3781efd"
 
 http_archive(
     name = "com_google_protobuf",
@@ -88,9 +88,9 @@ grpc_deps()
 
 http_archive(
     name = "rules_cc",
-    urls = ["https://github.com/bazelbuild/rules_cc/releases/download/0.2.17/rules_cc-0.2.17.tar.gz"],
-    sha256 = "283fa1cdaaf172337898749cf4b9b1ef5ea269da59540954e51fba0e7b8f277a",
-    strip_prefix = "rules_cc-0.2.17",
+    urls = ["https://github.com/bazelbuild/rules_cc/releases/download/0.1.1/rules_cc-0.1.1.tar.gz"],
+    sha256 = "712d77868b3152dd618c4d64faaddefcc5965f90f5de6e6dd1d5ddcd0be82d42",
+    strip_prefix = "rules_cc-0.1.1",
 )
 
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps", "PROTOBUF_MAVEN_ARTIFACTS")
