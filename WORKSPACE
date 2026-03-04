@@ -60,9 +60,9 @@ gapic_generator_python()
 
 gapic_generator_register_toolchains()
 
-_grpc_version = "1.71.0"
+_grpc_version = "1.78.0"
 
-_grpc_sha256 = "9313c3f8f4dd3341597f152d506a50caf571fe40f886e24ea9078891990df285"
+_grpc_sha256 = "dcaccdb284e8667f1a0b6d9aeb13ef9cea8e16aa873c606ab9c7d58be373e210"
 
 http_archive(
     name = "com_github_grpc_grpc",
@@ -72,9 +72,9 @@ http_archive(
 )
 # instantiated in grpc_deps().
 
-_protobuf_version = "34.0"
+_protobuf_version = "33.5"
 
-_protobuf_sha256 = "e540aae70d3b4f758846588768c9e39090fab880bc3233a1f42a8ab8d3781efd"
+_protobuf_sha256 = "440848dffa209beb8a04e41cc352762e44f8e91342b2a43aab6af9b30713c2f6"
 
 http_archive(
     name = "com_google_protobuf",
