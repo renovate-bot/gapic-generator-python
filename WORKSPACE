@@ -72,9 +72,9 @@ http_archive(
 )
 # instantiated in grpc_deps().
 
-_protobuf_version = "33.5"
+_protobuf_version = "32.1"
 
-_protobuf_sha256 = "440848dffa209beb8a04e41cc352762e44f8e91342b2a43aab6af9b30713c2f6"
+_protobuf_sha256 = "d2081ab9528292f7980ef2d88d2be472453eea4222141046ad4f660874d5f24e"
 
 http_archive(
     name = "com_google_protobuf",
