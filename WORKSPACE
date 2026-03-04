@@ -2,6 +2,24 @@ workspace(name = "gapic_generator_python")
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
+
+_rules_python_version = "0.30.0"
+
+_rules_python_sha256 = "3b8b4cdc991bc9def8833d118e4c850f1b7498b3d65d5698eea92c3528b8cf2c"
+
+http_archive(
+    name = "rules_python",
+    sha256 = _rules_python_sha256,
+    strip_prefix = "rules_python-{}".format(_rules_python_version),
+    url = "https://github.com/bazelbuild/rules_python/archive/{}.tar.gz".format(_rules_python_version),
+)
+
+load("@rules_python//python:repositories.bzl", "py_repositories")
+
+py_repositories()
+
+load("@rules_python//python:pip.bzl", "pip_parse")
+
 _bazel_skylib_version = "1.4.0"
 
 _bazel_skylib_sha256 = "f24ab666394232f834f74d19e2ff142b0af17466ea0c69a3f4c276ee75f6efce"
@@ -21,24 +39,6 @@ http_archive(
         "https://github.com/bazelbuild/rules_go/releases/download/v{0}/rules_go-v{0}.zip".format(_io_bazel_rules_go_version),
     ],
 )
-
-_rules_python_version = "0.30.0"
-
-_rules_python_sha256 = "3b8b4cdc991bc9def8833d118e4c850f1b7498b3d65d5698eea92c3528b8cf2c"
-
-http_archive(
-    name = "rules_python",
-    sha256 = _rules_python_sha256,
-    strip_prefix = "rules_python-{}".format(_rules_python_version),
-    url = "https://github.com/bazelbuild/rules_python/archive/{}.tar.gz".format(_rules_python_version),
-)
-
-load("@rules_python//python:repositories.bzl", "py_repositories")
-
-py_repositories()
-
-load("@rules_python//python:pip.bzl", "pip_parse")
-
 
 pip_parse(
     name = "gapic_generator_python_pip_deps",

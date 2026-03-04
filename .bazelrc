@@ -1,2 +1,3 @@
 # New protobuf requires C++17
 build --repo_env=BAZEL_CXXOPTS="-std=c++17"
+common --noenable_bzlmod
